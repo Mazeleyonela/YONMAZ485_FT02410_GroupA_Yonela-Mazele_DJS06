@@ -18,3 +18,18 @@ console.log(nameLengths);
 
 const sortedProvinces = provinces.slice().sort();
 console.log(sortedProvinces);
+
+// Filterprovinces without Cape
+const provincesWithoutCape = provinces.filter(province => !province.includes('Cape'));
+console.log(provincesWithoutCape.length);
+
+//Names that contain S
+const containsS = names.map(name => name.includes('S')).some(Boolean);
+console.log(containsS);
+
+const provinceMapping = names.reduce((acc, name, index) => {
+    acc[name] = provinces[index];
+    return acc;
+  }, {});
+  console.log(provinceMapping);
+  
