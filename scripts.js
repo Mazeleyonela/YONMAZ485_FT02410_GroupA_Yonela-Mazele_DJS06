@@ -33,3 +33,16 @@ const provinceMapping = names.reduce((acc, name, index) => {
   }, {});
   console.log(provinceMapping);
   
+
+const products = [
+  { product: 'banana', price: "2" },
+  { product: 'mango', price: 6 },
+  { product: 'potato', price: ' ' },
+  { product: 'avocado', price: "8" },
+  { product: 'coffee', price: 10 },
+  { product: 'tea', price: '' },
+];
+
+console.log(products.map(product => product.product));
+
+console.log(products.filter(product => product.product.length <= 5));
