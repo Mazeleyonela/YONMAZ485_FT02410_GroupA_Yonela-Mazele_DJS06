@@ -46,3 +46,21 @@ const products = [
 console.log(products.map(product => product.product));
 
 console.log(products.filter(product => product.product.length <= 5));
+
+console.log(products
+    .filter(product => product.price.trim() !== '')
+    .map(product => ({ ...product, price: Number(product.price) }))
+    .reduce((total, product) => total + product.price, 0));
+
+    console.log(products.reduce((acc, product) => acc + product.product, ''));
+
+//extreme price
+const prices = products
+  .filter(product => product.price.trim() !== '')
+  .map(product => Number(product.price));
+
+const highestPrice = Math.max(...prices);
+const lowestPrice = Math.min(...prices);
+
+console.log(`Highest: ${highestPrice}. Lowest: ${lowestPrice}.`);
+
