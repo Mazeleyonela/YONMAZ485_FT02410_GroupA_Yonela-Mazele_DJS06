@@ -64,3 +64,8 @@ const lowestPrice = Math.min(...prices);
 
 console.log(`Highest: ${highestPrice}. Lowest: ${lowestPrice}.`);
 
+console.log(Object.entries(products).reduce((acc, [key, { product, price }]) => {
+    acc[key] = { name: product, cost: price };
+    return acc;
+  }, {}));
+  
